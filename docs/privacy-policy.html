@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy — Notification Spy</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      max-width: 680px;
+      margin: 60px auto;
+      padding: 0 24px;
+      color: #1a1a2e;
+      line-height: 1.7;
+    }
+    h1 { font-size: 1.8rem; margin-bottom: 4px; }
+    h2 { font-size: 1.1rem; margin-top: 36px; }
+    .meta { color: #666; font-size: 0.9rem; margin-bottom: 40px; }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 6px; }
+  </style>
+</head>
+<body>
+  <h1>Privacy Policy</h1>
+  <p class="meta">Notification Spy &mdash; Last updated: June 21, 2026</p>
+
+  <h2>Overview</h2>
+  <p>Notification Spy is a utility app that forwards Android notifications to a webhook URL you configure. This policy explains what data the app handles and how.</p>
+
+  <h2>Data the app accesses</h2>
+  <p>The app uses Android's Notification Listener permission to read notifications from apps you explicitly select. This includes the notification title, body text, and source app name.</p>
+
+  <h2>Where your data goes</h2>
+  <p>Notification content is sent exclusively to the webhook URL you provide in the app settings. The app has no backend server of its own — your data never passes through any infrastructure controlled by the developer.</p>
+
+  <h2>Local storage</h2>
+  <p>The app stores a local history of forwarded notifications on your device (title, body, delivery status, timestamp). This data does not leave your device except via the webhook you configured.</p>
+
+  <h2>What the app does not do</h2>
+  <ul>
+    <li>It does not send data to the developer or any third party</li>
+    <li>It does not include analytics, crash reporting, or advertising SDKs</li>
+    <li>It does not access notifications from apps you have not explicitly enabled</li>
+    <li>It does not store notification content in any cloud service</li>
+  </ul>
+
+  <h2>Your control</h2>
+  <p>You can revoke notification access at any time in Android system settings (Settings → Notifications → Notification access). Removing the app deletes all locally stored history.</p>
+
+  <h2>Contact</h2>
+  <p>If you have any questions about this policy, open an issue on the <a href="https://github.com/d-ark/notification-spy">project repository</a>.</p>
+</body>
+</html>

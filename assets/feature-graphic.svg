@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1A1740"/>
+      <stop offset="100%" stop-color="#2D2A6E"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1024" height="500" fill="url(#bg)"/>
+
+  <!-- Notification card 1 (back) -->
+  <rect x="30" y="102" width="390" height="88" rx="14" fill="white" opacity="0.25"/>
+  <circle cx="66" cy="146" r="16" fill="#94A3B8" opacity="0.5"/>
+  <rect x="92" y="134" width="150" height="10" rx="5" fill="#94A3B8" opacity="0.4"/>
+  <rect x="92" y="152" width="110" height="8" rx="4" fill="#94A3B8" opacity="0.3"/>
+
+  <!-- Notification card 2 (front) -->
+  <rect x="45" y="174" width="390" height="88" rx="14" fill="white"/>
+  <circle cx="81" cy="218" r="16" fill="#6366F1"/>
+  <rect x="107" y="207" width="170" height="10" rx="5" fill="#CBD5E1"/>
+  <rect x="107" y="225" width="120" height="8" rx="4" fill="#E2E8F0"/>
+
+  <!-- Magnifying glass -->
+  <circle cx="368" cy="318" r="88" fill="none" stroke="#F97316" stroke-width="28"/>
+  <line x1="430" y1="380" x2="472" y2="422" stroke="#F97316" stroke-width="28" stroke-linecap="round"/>
+
+  <!-- Subtle vertical separator -->
+  <rect x="508" y="50" width="1" height="400" fill="white" opacity="0.08"/>
+
+  <!-- App name -->
+  <text x="548" y="195" font-family="system-ui,-apple-system,sans-serif" font-weight="700" font-size="60" fill="white">Notification</text>
+  <text x="548" y="272" font-family="system-ui,-apple-system,sans-serif" font-weight="700" font-size="60" fill="#F97316">Spy</text>
+
+  <!-- Tagline -->
+  <text x="548" y="332" font-family="system-ui,-apple-system,sans-serif" font-size="26" fill="#94A3B8">Forward any notification</text>
+  <text x="548" y="366" font-family="system-ui,-apple-system,sans-serif" font-size="26" fill="#94A3B8">to your webhook.</text>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background -->
+  <rect width="512" height="512" fill="#1E1B4B"/>
+
+  <!-- Notification card 1 (back) -->
+  <rect x="55" y="118" width="258" height="78" rx="14" fill="white" opacity="0.35"/>
+  <circle cx="88" cy="157" r="14" fill="#94A3B8" opacity="0.5"/>
+  <rect x="112" y="147" width="130" height="9" rx="4" fill="#94A3B8" opacity="0.5"/>
+  <rect x="112" y="163" width="90" height="7" rx="3" fill="#94A3B8" opacity="0.4"/>
+
+  <!-- Notification card 2 (front) -->
+  <rect x="68" y="182" width="258" height="78" rx="14" fill="white"/>
+  <circle cx="101" cy="221" r="14" fill="#6366F1"/>
+  <rect x="125" y="211" width="140" height="9" rx="4" fill="#CBD5E1"/>
+  <rect x="125" y="228" width="100" height="7" rx="3" fill="#E2E8F0"/>
+
+  <!-- Magnifying glass -->
+  <circle cx="358" cy="305" r="80" fill="none" stroke="#F97316" stroke-width="28"/>
+  <line x1="415" y1="362" x2="468" y2="415" stroke="#F97316" stroke-width="28" stroke-linecap="round"/>
+</svg>
