@@ -1,7 +1,7 @@
 package com.darkapps.notificationspy
 
 import android.app.Application
-import android.content.pm.ApplicationInfo
+import android.content.Intent
 import android.content.pm.PackageManager
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
@@ -44,9 +44,10 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
 
     private fun loadInstalledApps(): List<InstalledApp> {
         val pm = getApplication<Application>().packageManager
-        return pm.getInstalledApplications(PackageManager.GET_META_DATA)
-            .filter { (it.flags and ApplicationInfo.FLAG_SYSTEM) == 0 }
-            .map { InstalledApp(it.packageName, pm.getApplicationLabel(it).toString()) }
+        val intent = Intent(Intent.ACTION_MAIN).apply { addCategory(Intent.CATEGORY_LAUNCHER) }
+        return pm.queryIntentActivities(intent, 0)
+            .map { InstalledApp(it.activityInfo.packageName, it.loadLabel(pm).toString()) }
+            .distinctBy { it.packageName }
             .sortedBy { it.appName }
     }
 
