@@ -31,14 +31,14 @@
   <p>The app uses Android's Notification Listener permission to read notifications from apps you explicitly select. This includes the notification title, body text, and source app name.</p>
 
   <h2>Where your data goes</h2>
-  <p>Notification content is sent exclusively to the webhook URL you provide in the app settings. The app has no backend server of its own — your data never passes through any infrastructure controlled by the developer.</p>
+  <p>Notification content is sent exclusively to the webhook URL you provide in the app settings. The app has no backend server of its own — your data never passes through any infrastructure controlled by the developer. You choose this destination; the developer has no access to it and no knowledge of what you configure.</p>
 
   <h2>Local storage</h2>
   <p>The app stores a local history of forwarded notifications on your device (title, body, delivery status, timestamp). This data does not leave your device except via the webhook you configured.</p>
 
   <h2>What the app does not do</h2>
   <ul>
-    <li>It does not send data to the developer or any third party</li>
+    <li>It does not send data to the developer or any third-party server — only to the webhook URL you configure and control</li>
     <li>It does not include analytics, crash reporting, or advertising SDKs</li>
     <li>It does not access notifications from apps you have not explicitly enabled</li>
     <li>It does not store notification content in any cloud service</li>
