@@ -1,5 +1,7 @@
 # Notification Spy
 
+[Available on Google Play](https://play.google.com/store/apps/details?id=com.darkapps.notificationspy)
+
 An Android app that forwards push notifications to a webhook URL, turning your phone into an automation trigger.
 
 ## What it does
