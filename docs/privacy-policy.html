@@ -22,10 +22,10 @@
 </head>
 <body>
   <h1>Privacy Policy</h1>
-  <p class="meta">Notification Spy &mdash; Last updated: June 21, 2026</p>
+  <p class="meta">Notification Spy &mdash; Last updated: November 23, 2026</p>
 
   <h2>Overview</h2>
-  <p>Notification Spy is a utility app that forwards Android notifications to a webhook URL you configure. This policy explains what data the app handles and how.</p>
+  <p>Notification Spy (package <code>com.darkapps.notificationspy</code>) is a utility app developed by Anton Priadko (&ldquo;the developer&rdquo;) that forwards Android notifications to a webhook URL you configure. This policy explains what data the app handles and how.</p>
 
   <h2>Data the app accesses</h2>
   <p>The app uses Android's Notification Listener permission to read notifications from apps you explicitly select. This includes the notification title, body text, and source app name.</p>
@@ -35,6 +35,21 @@
 
   <h2>Local storage</h2>
   <p>The app stores a local history of forwarded notifications on your device (title, body, delivery status, timestamp). This data does not leave your device except via the webhook you configured.</p>
+
+  <h2>Camera</h2>
+  <p>The app requests camera access only so you can scan a QR code containing your webhook configuration. Camera images are processed on the device in real time and are never stored or transmitted.</p>
+
+  <h2>Third parties and sharing</h2>
+  <p>The webhook endpoint you configure is operated by you or by a third party you choose. Once notification content is delivered to that endpoint, its handling is governed by that operator's policies, not this one. The developer does not receive, collect or share your data.</p>
+
+  <h2>Security</h2>
+  <p>Notification content is sent over the network to your webhook URL. The app only accepts HTTPS webhook URLs, so content is encrypted in transit. Local history is kept in the app's private storage, which other apps cannot access on a non-rooted device.</p>
+
+  <h2>Data retention and deletion</h2>
+  <p>Local history is automatically deleted from your device after 30 days. You can also remove it at any time by clearing the app's storage in Android settings or uninstalling the app. The developer holds no copy of your data and so has nothing to delete on a server.</p>
+
+  <h2>Children</h2>
+  <p>The app is not directed at children under 13 and does not knowingly collect data from them.</p>
 
   <h2>What the app does not do</h2>
   <ul>
@@ -47,7 +62,10 @@
   <h2>Your control</h2>
   <p>You can revoke notification access at any time in Android system settings (Settings → Notifications → Notification access). Removing the app deletes all locally stored history.</p>
 
+  <h2>Changes to this policy</h2>
+  <p>Any changes will be posted on this page with an updated date.</p>
+
   <h2>Contact</h2>
-  <p>If you have any questions about this policy, open an issue on the <a href="https://github.com/d-ark/notification-spy">project repository</a>.</p>
+  <p>Developer: Anton Priadko, <a href="mailto:antonpriadko@gmail.com">antonpriadko@gmail.com</a>. If you have any questions about this policy, email the developer or open an issue on the <a href="https://github.com/d-ark/notification-spy">project repository</a>.</p>
 </body>
 </html>

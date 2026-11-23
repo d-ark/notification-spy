@@ -67,6 +67,7 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun saveWebhookUrl(url: String) {
+        if (!url.trim().startsWith("https://", ignoreCase = true)) return
         viewModelScope.launch { prefs.setWebhookUrl(url.trim()) }
     }
 

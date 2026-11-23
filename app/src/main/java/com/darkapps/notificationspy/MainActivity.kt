@@ -21,6 +21,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -117,8 +118,11 @@ fun MainScreen(vm: AppViewModel = viewModel()) {
     }
 }
 
+private fun isHttpsUrl(url: String): Boolean =
+    url.trim().startsWith("https://", ignoreCase = true) && url.trim().length > "https://".length
+
 private fun parseWebhookFromQr(raw: String): String? {
-    if (raw.startsWith("http://") || raw.startsWith("https://")) return raw
+    if (raw.startsWith("https://", ignoreCase = true)) return raw
     return runCatching {
         val uri = Uri.parse(raw)
         if (uri.scheme == "notificationspy" && uri.host == "webhook") {
@@ -203,7 +207,11 @@ private fun WebhookForm(vm: AppViewModel, onScanQr: () -> Unit) {
         label = { Text("Webhook URL") },
         modifier = Modifier.fillMaxWidth(),
         singleLine = true,
-        placeholder = { Text("https://example.com/webhook") }
+        placeholder = { Text("https://example.com/webhook") },
+        isError = urlInput.isNotBlank() && !isHttpsUrl(urlInput),
+        supportingText = {
+            if (urlInput.isNotBlank() && !isHttpsUrl(urlInput)) Text("Webhook URL must start with https://")
+        }
     )
     Spacer(Modifier.height(8.dp))
     Row(
@@ -217,7 +225,7 @@ private fun WebhookForm(vm: AppViewModel, onScanQr: () -> Unit) {
         }
         Button(
             onClick = { vm.saveWebhookUrl(urlInput) },
-            enabled = urlInput.trim() != savedUrl && urlInput.isNotBlank()
+            enabled = urlInput.trim() != savedUrl && isHttpsUrl(urlInput)
         ) {
             Text("Save")
         }
@@ -379,6 +387,7 @@ private fun AppsTab(vm: AppViewModel) {
 private fun SettingsTab(vm: AppViewModel, onScanQr: () -> Unit) {
     val lastEvent by vm.events.collectAsState()
     val lastStatus = lastEvent.firstOrNull()?.status
+    val uriHandler = LocalUriHandler.current
 
     Column(
         modifier = Modifier
@@ -413,6 +422,12 @@ private fun SettingsTab(vm: AppViewModel, onScanQr: () -> Unit) {
         }
 
         QrFormatHint()
+
+        TextButton(
+            onClick = { uriHandler.openUri("https://d-ark.github.io/notification-spy/privacy-policy.html") }
+        ) {
+            Text("Privacy policy")
+        }
 
         if (BuildConfig.DEBUG) {
             OutlinedButton(
