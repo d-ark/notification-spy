@@ -27,10 +27,12 @@ android {
 
     signingConfigs {
         create("release") {
-            storeFile = (keystoreProps["KEYSTORE_PATH"] as? String)?.let { file(it) }
-            storePassword = keystoreProps["KEYSTORE_PASSWORD"] as? String
-            keyAlias = keystoreProps["KEY_ALIAS"] as? String
-            keyPassword = keystoreProps["KEY_PASSWORD"] as? String
+            fun prop(name: String): String? =
+                (keystoreProps[name] as? String) ?: System.getenv(name)
+            storeFile = prop("KEYSTORE_PATH")?.let { file(it) }
+            storePassword = prop("KEYSTORE_PASSWORD")
+            keyAlias = prop("KEY_ALIAS")
+            keyPassword = prop("KEY_PASSWORD")
         }
     }
 
